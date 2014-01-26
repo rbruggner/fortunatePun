@@ -51,7 +51,8 @@ public class TweeterEater extends HttpServlet {
 	}
 	
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        long twitterId = (long) Long.parseLong(request.getParameter("twitterId"));
+        // TODO - check for twitterId parameter
+    	long twitterId = (long) Long.parseLong(request.getParameter("twitterId"));
         System.out.println("TwitterID:" + twitterId);
         
         // Get user oauth credentials:
@@ -90,7 +91,7 @@ public class TweeterEater extends HttpServlet {
                 }
                 System.out.println("");
             }
-            response.sendRedirect("http://able-inn-471.appspot.com/t/"+twitter.verifyCredentials().getScreenName());
+            
         } catch (Exception e){
         	System.err.println("Failed:" + e.getMessage());
         	e.printStackTrace();

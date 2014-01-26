@@ -52,9 +52,12 @@ public class CallbackServlet extends HttpServlet {
         try {
         	AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
             request.getSession().removeAttribute("requestToken");
+            
+            User user = twitter.verifyCredentials();
             // Store Access Token so that we can constantly poll twitter
-            CallbackServlet.storeAccessToken(twitter.verifyCredentials() , accessToken);
-            response.sendRedirect(request.getContextPath() + "/eatTweets?twitterId="+twitter.verifyCredentials().getId());
+            CallbackServlet.storeAccessToken(user, accessToken);
+
+            response.sendRedirect(request.getContextPath() + "/enqueueTweets?twitterId="+user.getId()+"&twitterHandle="+user.getScreenName());
         } catch (TwitterException e) {
             throw new ServletException(e);
         }
