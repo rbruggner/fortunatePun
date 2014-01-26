@@ -1,10 +1,6 @@
 package com.fortunatePun;
 
-
-import com.google.appengine.api.backends.BackendService;
 import com.google.appengine.api.utils.SystemProperty;
-import com.google.apphosting.api.ApiProxy;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

@@ -32,6 +32,10 @@
         <servlet-class>com.fortunatePun.signin.PostServlet
         </servlet-class>
     </servlet>
+    <servlet>
+    	<servlet-name>enqueueTweets</servlet-name>
+    	<servlet-class>com.fortunatePun.EnqueueTweetProcessor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>signin</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -51,6 +55,10 @@
     <servlet-mapping>
     	<servlet-name>eatTweets</servlet-name>
     	<url-pattern>/eatTweets</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>enqueueTweets</servlet-name>
+    	<url-pattern>/enqueueTweets</url-pattern>
     </servlet-mapping>
     <error-page>
         <exception-type>twitter4j.TwitterException</exception-type>
