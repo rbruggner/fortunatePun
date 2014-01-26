@@ -22,4 +22,4 @@ war/fortunatePun/
 
 # App engine generated #
 war/WEB-INF/appengine-generated/
-
+war/WEB-INF/twitter4j.properties
